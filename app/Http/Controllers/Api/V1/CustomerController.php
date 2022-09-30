@@ -24,11 +24,11 @@ class CustomerController extends Controller
     $filter = new CustomerQuery();
     $queryItems = $filter->transform($request);
     
-    if(count($queryItems)==0){
-        return new CustomerCollection(Customer::paginate());
-    }else{
-        return new CustomerCollection(Customer::where($queryItems)->paginate());
-    }
+        if(count($queryItems)==0){
+            return new CustomerCollection(Customer::paginate());
+        }else{
+            return new CustomerCollection(Customer::where($queryItems)->paginate());
+        }
     }
 
     /**

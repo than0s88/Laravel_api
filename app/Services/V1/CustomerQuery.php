@@ -37,7 +37,7 @@ class CustomerQuery {
             if(!isset($query)){
                 continue;
             }
-
+            
             $column = $this->columnMap[$parm] ?? $parm;
 
             foreach($operators as $operator){
@@ -48,6 +48,7 @@ class CustomerQuery {
         }
 
         return $eloQuery;
+
     }
 
 }
