@@ -53,7 +53,7 @@ class CustomerController extends Controller
      */
     public function store(StoreCustomerRequest $request)
     {
-        return new CustomerCollection(Customer::create($request->validated()));
+        return new CustomerResource(Customer::create($request->validated()));
     }
 
     /**
@@ -68,7 +68,6 @@ class CustomerController extends Controller
         if ($includeInvoices){
             return new CustomerResource($customer->loadMissing('invoices'));
         }
-
         return new CustomerResource($customer);
     }
 
@@ -92,7 +91,7 @@ class CustomerController extends Controller
      */
     public function update(UpdateCustomerRequest $request, Customer $customer)
     {
-        //
+        $customer->update($request->validated());
     }
 
     /**
