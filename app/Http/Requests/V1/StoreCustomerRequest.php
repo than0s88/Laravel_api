@@ -22,6 +22,7 @@ class StoreCustomerRequest extends FormRequest
      *
      * @return array
      */
+
     public function rules()
     {
         return [
@@ -31,13 +32,13 @@ class StoreCustomerRequest extends FormRequest
             'address'=> ['required'],
             'city'=> ['required'],
             'state'=> ['required'],
-            'postal_code'=> ['required'],
+            'postalCode'=> ['required']
         ];
     }
 
     protected function prepareForValidation(){
         $this->merge([
-            'postal_code' => $this->postalCode,
+            'postal_code' => $this->postalCode
         ]);
     }
 }

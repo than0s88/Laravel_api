@@ -8,8 +8,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\InvoiceResource;
 use App\Http\Resources\V1\InvoiceCollection;
 use App\Filters\V1\InvoicesFilter;
-use Illuminate\Support\Arr;
 use App\Http\Requests\V1\BulkStoreInvoiceRequest;
+use Illuminate\Support\Arr;
 
 class InvoiceController extends Controller
 {

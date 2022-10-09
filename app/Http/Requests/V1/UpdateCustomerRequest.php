@@ -33,7 +33,7 @@ class UpdateCustomerRequest extends FormRequest
                 'address'=> ['required'],
                 'city'=> ['required'],
                 'state'=> ['required'],
-                'postal_code'=> ['required'],
+                'postalCode'=> ['required']
             ];
         }else{
             return [
@@ -43,10 +43,9 @@ class UpdateCustomerRequest extends FormRequest
                 'address'=> ['sometimes','required'],
                 'city'=> ['sometimes','required'],
                 'state'=> ['sometimes','required'],
-                'postal_code'=> ['sometimes','required'],
+                'postalCode'=> ['sometimes','required']
             ];
         }
-
     }
 
     protected function prepareForValidation(){
