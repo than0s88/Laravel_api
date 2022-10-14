@@ -9,6 +9,13 @@ class Customer extends Model
 {
     use HasFactory;
 
+    protected $includeInvoices = 'includeInvoices';
+
+    public function getRouteKeyName()
+    {
+        return 'postal_code'; //if you want to hide the customer ID and instean use other model attributes;
+    }
+
     protected $fillable = [
         'name',
         'type',

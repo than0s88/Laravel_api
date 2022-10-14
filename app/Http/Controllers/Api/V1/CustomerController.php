@@ -48,7 +48,7 @@ class CustomerController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Customer  $customer
-     * @return \Illuminate\Http\Response
+     * @return CustomerResource
      */
     public function show(Customer $customer)
     {

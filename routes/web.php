@@ -24,13 +24,6 @@ Route::get('test', [TestController::class, 'index']);
 Route::get('testpost', [TestController::class, 'test'])->name('testpost');
 
 
-
-Route::post('/tokens/create', function (Request $request) {
-    $token = $request->user()->createToken($request->token_name);
-
-    return ['token' => $token->plainTextToken];
-});
-
 Route::get('/setup', function (){
     $credentials = [
         'email' => 'paulo@gmail.com',
@@ -43,6 +36,7 @@ Route::get('/setup', function (){
         $user->email = $credentials['email'];
         $user->password = Hash::make($credentials['password']);
         $user->save();
+
     }
 
     if (Auth::attempt($credentials)){
@@ -61,3 +55,6 @@ Route::get('/setup', function (){
     }
 
 });
+
+
+
